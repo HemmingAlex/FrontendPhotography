@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
-import Gallery from "../components/ImageDetail";
+import Gallery from "../component/ImageDetail";
 import styles from "../styles/Home.module.css";
 export default function Home({ stuff }) {
   const [photos, setPhotos] = useState(stuff);
