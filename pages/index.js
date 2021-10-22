@@ -23,7 +23,7 @@ export default function Home({ stuff }) {
           disabled={search === ""}
           onClick={async () => {
             const results = await fetch(
-              `https://ellaphotos.herokuapp.com/photos?name=${search}`
+              `${process.env.cloudinary}/photos?name=${search}`
             );
             const details = await results.json();
             setPhotos(await details);
