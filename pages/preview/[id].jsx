@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-export default photo({ photo, location, name, date }) => {
+export default function Photo({ photo, location, name, date }) {
   const router = useRouter();
   if (!router.isFallback && !photo) {
     return <ErrorPage statusCode={404} />;
