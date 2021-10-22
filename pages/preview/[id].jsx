@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-
+import ErrorPage from "../components/ErrorPage";
 
 export default function Photo({ photo, location, name, date }) {
   const router = useRouter();
