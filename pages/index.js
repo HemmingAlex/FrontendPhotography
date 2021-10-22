@@ -50,7 +50,7 @@ export default function Home({ stuff }) {
   );
 }
 export async function getStaticProps() {
-  const results = await fetch("https://ellaphotos.herokuapp.com/photos");
+  const results = await fetch(`${process.env.cloudinary}/photos`);
   const stuff = await results.json();
 
   return {
