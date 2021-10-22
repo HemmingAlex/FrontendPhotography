@@ -23,7 +23,7 @@ export default function Home({ stuff }) {
           disabled={search === ""}
           onClick={async () => {
             const results = await fetch(
-              `https://ellaphotos.herokuapp.com/photos?name=${search}`
+              `https://ellaphotos.herokuapp.com/galleries?name=${search}`
             );
             const details = await results.json();
             setPhotos(await details);
@@ -31,20 +31,17 @@ export default function Home({ stuff }) {
         >
           Find
         </button>
-
-        <div className={styles.fade}>
+     <div className={styles.fade}>
           <div className={styles.gridContainer}>
             {photos &&
               photos.map((detail) => (
                 <Gallery
                   key={detail.id}
-                  thumbnailUrl={detail.Image[0].formats.thumbnail.url}
+                  thumbnailUrl={`${detail.Image[0].formats.small.url}`}
                   title={detail.name}
                   id={detail.id}
                 />
               ))}
-
-              <img src={photos[0].Image[0].formats.thumbnail.url}/>
           </div>
         </div>
       </main>
@@ -52,7 +49,7 @@ export default function Home({ stuff }) {
   );
 }
 export async function getStaticProps() {
-  const results = await fetch("https://ellaphotos.herokuapp.com/photos");
+  const results = await fetch("https://ellaphotos.herokuapp.com/galleries");
   const stuff = await results.json();
 
   return {

@@ -22,7 +22,7 @@ export default function Photo({ photo, location, name, date }) {
           <div>Loading…</div>
         ) : (
           <>
-            <Image width={960} priority height={540} src={photo} />
+            <img src={`https://ellaphotos.herokuapp.com${photo}`} />
           </>
         )}
       </div>
@@ -41,18 +41,18 @@ export default function Photo({ photo, location, name, date }) {
 }
 export async function getStaticProps({ params }) {
   const photoid = params.id;
-  const results = await fetch(`http://localhost:1337/photos?id=${photoid}`);
+  const results = await fetch(`https://ellaphotos.herokuapp.com/galleries?id=${photoid}`);
   const previews = await results.json();
   const photo = await previews[0].Image[0].formats.small.url;
   const name = await previews[0].name;
   const location = await previews[0].location;
-  const date = await previews[0].Date.toString();
+  const date = await previews[0].date.toString();
   return {
     props: { photo, name, location, date },
   };
 }
 export async function getStaticPaths() {
-  const results = await fetch("http://localhost:1337/photos");
+  const results = await fetch("https://ellaphotos.herokuapp.com/galleries");
   const previews = await results.json();
   return {
     paths:

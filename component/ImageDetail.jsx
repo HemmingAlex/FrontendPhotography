@@ -5,7 +5,7 @@
         <div>
           <Link as={`/preview/${id}`} href="/preview/[id]">
             <a>
-              <Image width={250} height={200} src={thumbnailUrl} />
+              <img width={250} height={200} src={`https://ellaphotos.herokuapp.com${thumbnailUrl}`} />
               <div className="photoid"> {title}</div>
             </a>
           </Link>
