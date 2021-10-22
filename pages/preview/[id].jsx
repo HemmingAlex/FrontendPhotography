@@ -41,9 +41,9 @@ export default function Photo({ photo, location, name, date }) {
 }
 export async function getStaticProps({ params }) {
   const photoid = params.id;
-  const results = await fetch(`${process.env.cloudinary}/photos?id=${photoid}`);
+  const results = await fetch(`http://localhost:1337/photos?id=${photoid}`);
   const previews = await results.json();
-  const photo = await previews[0].img.formats.small.url;
+  const photo = await previews[0].Image[0].formats.small.url;
   const name = await previews[0].name;
   const location = await previews[0].location;
   const date = await previews[0].Date.toString();
@@ -52,7 +52,7 @@ export async function getStaticProps({ params }) {
   };
 }
 export async function getStaticPaths() {
-  const results = await fetch(`${process.env.cloudinary}/photos`);
+  const results = await fetch("http://localhost:1337/photos");
   const previews = await results.json();
   return {
     paths:

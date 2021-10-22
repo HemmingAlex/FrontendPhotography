@@ -23,7 +23,7 @@ export default function Home({ stuff }) {
           disabled={search === ""}
           onClick={async () => {
             const results = await fetch(
-              `${process.env.cloudinary}/photos?name=${search}`
+              `https://ellaphotos.herokuapp.com/photos?name=${search}`
             );
             const details = await results.json();
             setPhotos(await details);
@@ -38,11 +38,13 @@ export default function Home({ stuff }) {
               photos.map((detail) => (
                 <Gallery
                   key={detail.id}
-                  thumbnailUrl={detail.img.formats.small.url}
+                  thumbnailUrl={detail.Image[0].formats.thumbnail.url}
                   title={detail.name}
                   id={detail.id}
                 />
               ))}
+
+              <img src={photos[0].Image[0].formats.thumbnail.url}/>
           </div>
         </div>
       </main>
@@ -50,7 +52,7 @@ export default function Home({ stuff }) {
   );
 }
 export async function getStaticProps() {
-  const results = await fetch(`${process.env.cloudinary}/photos`);
+  const results = await fetch("https://ellaphotos.herokuapp.com/photos");
   const stuff = await results.json();
 
   return {
