@@ -22,7 +22,7 @@ export default function Photo({ photo, location, name, date }) {
           <div>Loading…</div>
         ) : (
           <>
-            <img src={`https://ellaphotos.herokuapp.com${photo}`} />
+            <img src={photo} />
           </>
         )}
       </div>

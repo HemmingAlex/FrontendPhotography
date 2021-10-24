@@ -8,7 +8,7 @@ export default function Gallery({ thumbnailUrl, title, id }) {
           <img
             width={250}
             height={200}
-            src={`https://ellaphotos.herokuapp.com${thumbnailUrl}`}
+            src={thumbnailUrl}
           />
           <div className="photoid"> {title}</div>
         </a>
