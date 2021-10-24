@@ -67,7 +67,7 @@ const  drawerToggleClickHandler = () => {
               photos.map((detail) => (
                 <Gallery
                   key={detail.id}
-                  // thumbnailUrl={`${detail.Image[0].formats.small.url}`}
+                  thumbnailUrl={`${detail.Image[0].formats.small.url}`}
                   title={detail.name}
                   id={detail.id}
                 />

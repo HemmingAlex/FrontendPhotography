@@ -41,7 +41,9 @@ export default function Photo({ photo, location, name, date }) {
 }
 export async function getStaticProps({ params }) {
   const photoid = params.id;
-  const results = await fetch(`https://ellaphotos.herokuapp.com/galleries?id=${photoid}`);
+  const results = await fetch(
+    `https://ellaphotos.herokuapp.com/galleries?id=${photoid}`
+  );
   const previews = await results.json();
   const photo = await previews[0].Image[0].formats.small.url;
   const name = await previews[0].name;
