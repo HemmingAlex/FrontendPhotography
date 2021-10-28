@@ -5,11 +5,7 @@ export default function Gallery({ thumbnailUrl, title, id }) {
     <div>
       <Link as={`/preview/${id}`} href="/preview/[id]">
         <a>
-          <img
-            width={250}
-            height={200}
-            src={thumbnailUrl}
-          />
+          <img width={250} height={200} src={thumbnailUrl} />
           <div className="photoid"> {title}</div>
         </a>
       </Link>
