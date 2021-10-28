@@ -45,10 +45,10 @@ export async function getStaticProps({ params }) {
     `https://ellaphotos.herokuapp.com/galleries?id=${photoid}`
   );
   const previews = await results.json();
-  const photo = await previews[0].Image[0].formats.small.url;
-  const name = await previews[0].name;
-  const location = await previews[0].location;
-  const date = await previews[0].date.toString();
+  const photo = await previews[0]?.Image[0].formats.small.url;
+  const name = await previews[0]?.name;
+  const location = await previews[0]?.location;
+  const date = await previews[0]?.date.toString();
   return {
     props: { photo, name, location, date },
   };
