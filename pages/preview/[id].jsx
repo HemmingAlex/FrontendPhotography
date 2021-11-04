@@ -53,6 +53,10 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { photo, name, location, date },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 3000, // In seconds
   };
 }
 export async function getStaticPaths() {
