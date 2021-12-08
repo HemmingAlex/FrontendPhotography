@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html,
 body {
   padding: 0;
@@ -50,11 +53,11 @@ a {
   margin: 1rem;
   background-color: white;
   color: black;
-  border: 2px solid #b052c7; 
+  border: 2px solid #b052c7;
 }
 
 .button:hover {
-  background-color: #b052c7; 
+  background-color: #b052c7;
   color: white;
 }
 

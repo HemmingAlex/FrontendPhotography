@@ -1,8 +1,9 @@
 import React from "react";
 
 import style from "./SideDrawer.module.css";
+import Link from "next/link";
 
-const SideDrawer = props => {
+const SideDrawer = (props) => {
   let drawerClasses = style.sideDrawer;
   if (props.show) {
     drawerClasses = style.SideDrawer;
@@ -15,7 +16,9 @@ const SideDrawer = props => {
           <a href="/">Home</a>
         </li>
         <li>
-          <a href="/">Login</a>
+          <a>
+            <Link href="/Login">Login</Link>
+          </a>
         </li>
       </ul>
     </nav>
