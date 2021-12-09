@@ -31,19 +31,20 @@ function Account() {
       <SideDrawer show={sideOpen} />
       {backdrop}
       {!user ? (
-        <div style={{ zIndex: -1 }} className="grid place-content-center">
+        <div style={{ zIndex: 1 }} className="grid place-content-center">
           login please
           <h1 onClick={() => logoutUser()}>Logout</h1>
         </div>
       ) : (
         <div
-          style={{ zIndex: -1 }}
+          style={{ zIndex: 1 }}
           className="flex h-screen relative mb-10 flex-wrap justify-center items-center text-lg font-bold"
         >
           <div className="text-center">
             Hello there{" "}
             <span className="text-blue-500 inline"> {user?.email}</span>
             <button
+            style={{ zIndex: 1 }}
               className="button mx-auto flex justify-center"
               onClick={() => logoutUser()}
             >
