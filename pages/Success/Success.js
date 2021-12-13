@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import { useRouter } from "next/router";
-import { API_URL } from "../utils/urls";
+import { API_URL } from "../../utils/urls";
 
 import Spinner from "../../component/Spinner";
 
