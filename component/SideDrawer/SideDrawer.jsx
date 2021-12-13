@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 
-import style from "./SideDrawer.module.css";
 import Link from "next/link";
 import AuthContext from "../../context/AuthContext";
 
