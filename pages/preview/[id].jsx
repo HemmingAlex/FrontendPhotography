@@ -32,7 +32,7 @@ export default function Photo({ photo, location, name, date, previews }) {
       <div className="Imagecontainer">Date: {date}</div>
       {price && (
         <div className="m-auto justify-center">
-          <div className="Imagecontainer">Price: {previews[0]?.price}</div>
+          <div className="Imagecontainer">Price: {price}</div>
           <div className="flex justify-center">
             {previews[0] && <BuyButton gallery={previews[0]} />}
           </div>
