@@ -4,7 +4,7 @@ import Link from "next/link";
 import ErrorPage from "../../component/ErrorPage";
 import BuyButton from "../../component/BuyButton";
 
-export default function Photo({ photo, location, name, date, previews, price }) {
+export default function Photo({ photo, location, name, date, single, price }) {
   const router = useRouter();
   if (!router.isFallback && !photo) {
     return <ErrorPage statusCode={404} />;
@@ -34,7 +34,7 @@ export default function Photo({ photo, location, name, date, previews, price }) 
         <div className="m-auto justify-center">
           <div className="Imagecontainer">Price: {price}</div>
           <div className="flex justify-center">
-            {previews[0] && <BuyButton gallery={previews[0]} />}
+            {single && <BuyButton gallery={single} />}
           </div>
         </div>
       )}
@@ -60,9 +60,10 @@ export async function getStaticProps({ params }) {
   const store = await previews[0].date;
   const price = await previews[0].price;
   const date = store ? store.toString() : "";
+  const single = await previews[0];
 
   return {
-    props: { photo, name, location, date, previews, price },
+    props: { photo, name, location, date, single, price },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
