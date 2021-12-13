@@ -30,11 +30,11 @@ export default function Photo({ photo, location, name, date, previews }) {
       <div className="Imagecontainer">Name : {name}</div>
       <div className="Imagecontainer">Location {location}</div>
       <div className="Imagecontainer">Date: {date}</div>
-      {previews[0]?.price && (
+      {price && (
         <div className="m-auto justify-center">
           <div className="Imagecontainer">Price: {previews[0]?.price}</div>
           <div className="flex justify-center">
-            <BuyButton gallery={previews[0]} />
+            {previews[0] && <BuyButton gallery={previews[0]} />}
           </div>
         </div>
       )}
@@ -58,10 +58,11 @@ export async function getStaticProps({ params }) {
   const name = await previews[0].name;
   const location = await previews[0].location;
   const store = await previews[0].date;
+  const price = await previews[0].price;
   const date = store ? store.toString() : "";
 
   return {
-    props: { photo, name, location, date, previews },
+    props: { photo, name, location, date, previews, price },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
