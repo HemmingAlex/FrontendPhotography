@@ -52,7 +52,7 @@ export default function Success() {
       <h2>Hold on!</h2>
       {loading && (
         <div>
-          We're confirming your purchase!
+          We&lsquo;re confirming your purchase!
           <div className="flex justify-center">
             <Spinner />
           </div>

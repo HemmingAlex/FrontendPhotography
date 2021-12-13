@@ -2,7 +2,6 @@ import Head from "next/head";
 import { useContext, useState } from "react";
 import Toolbar from "../component/Toolbar/Toolbar";
 import SideDrawer from "../component/SideDrawer/SideDrawer";
-import Backdrop from "../component/Backdrop/Backdrop";
 import AuthContext from "../context/AuthContext";
 
 function Login() {
