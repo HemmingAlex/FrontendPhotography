@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Gallery from "../component/ImageDetail";
 import styles from "../styles/Home.module.css";
 
@@ -20,9 +20,13 @@ export default function Home({ stuff }) {
     setSideOpen(false);
   };
   let backdrop;
-  if (sideOpen) {
-    backdrop = <Backdrop click={backdropClickHandler} />;
-  }
+  useEffect(() => {
+    if (sideOpen) {
+      backdrop = <Backdrop click={backdropClickHandler} />;
+    } else {
+      backdrop = <div className="hidden" />;
+    }
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -41,9 +45,14 @@ export default function Home({ stuff }) {
         />
         <meta id="og-image" property="og:image" content="Logo.png" />
       </Head>
+      {sideOpen && (
+        <div
+          className="h-screen w-screen bg-Purps z-1 fixed opacity-50 top-0"
+          onClick={backdropClickHandler}
+        />
+      )}{" "}
       <Toolbar drawerClickHandler={drawerToggleClickHandler} />
       <SideDrawer show={sideOpen} />
-      {backdrop}
       <main className={styles.main}>
         <img height="100" width="100" src="Logo.png" /> Ella Foster,
         photographer

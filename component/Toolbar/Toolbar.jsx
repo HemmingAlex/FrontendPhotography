@@ -15,14 +15,16 @@ const Toolbar = (props) => {
           <DrawerToggleButton click={props.drawerClickHandler} />
         </div>
         <div
-          onClick={() => {
-            if (pathname == "/") {
-              window.location.reload(false);
-            }
-          }}
+          // onClick={() => {
+          //   if (pathname == "/") {
+          //     window.location.reload(false);
+          //   }
+          // }}
           className={style.toolbarLogo}
         >
-          <Link href="/"> Ella Photography</Link>
+          <Link href="/">
+            Ella Photography
+          </Link>
         </div>
         <div className={style.spacer} />
         <div className={`cursor-pointer ${style.toolbarNavigationItems}`}>
@@ -33,22 +35,19 @@ const Toolbar = (props) => {
                   window.location.reload(false);
                 }
               }}
+              className='max-w-max'
             >
               <Link className="cursor-pointer" href="/">
                 Home
               </Link>
             </li>
             <li className="cursor-pointer z-2 mr-2 text-white ">
-              {user ? (
-                ""
-              ) : (
-                <a href="/Login">
-                  {/* <a> */}
-                  Login
-                  {/* </a>{" "} */}
-                </a>
+              {user ? "" : <Link href="/Login">Login</Link>}
+              {user && (
+                <Link href="/Account">
+                  Account
+                </Link>
               )}
-              {user && <Link href="/Account"> Account </Link>}
             </li>
           </ul>
         </div>

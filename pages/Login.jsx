@@ -25,9 +25,9 @@ function Login() {
   };
   let backdrop;
   if (sideOpen) {
-    backdrop = <Backdrop click={backdropClickHandler} />;
+    backdrop = "h-full w-1/2 bg-Purps left-1/2 fixed opacity-50 top-0"
   }
-
+   else{ backdrop= 'hidden z-0';}
   return (
     <div>
       <Head>
@@ -35,22 +35,35 @@ function Login() {
         <meta name="description" content="Login here to be able to purchase" />
       </Head>
       <Toolbar drawerClickHandler={drawerToggleClickHandler} />
-      <SideDrawer show={sideOpen} />
-      {backdrop}
+      <div         
+              style={{ zIndex: 0 }}
+              className="block md:hidden h-screen w-screen z-99 fixed top-0"
+>
+
+      <SideDrawer 
+      show={sideOpen} />
+            {sideOpen && (
+        <div
+        className={backdrop}
+          onClick={backdropClickHandler}
+        />
+      )}
+      </div>
       <div
-        style={{ zIndex: -1 }}
         className="w-full h-full flex justify-center items-center fixed"
       >
-        {/* <h2>Login</h2> */}
         <form onSubmit={handleSubmit}>
           <input
-            className="m-5 p-2 hover:bg-red-100 rounded transition border-2"
+            className="m-5 p-2 h-max w-max hover:bg-red-100 rounded transition border-2"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             type="email"
             placeholder="Email address..."
           />
-          <button className="m-2 text-green-400" type="submit">
+          <button className="m-2 text-green-400" 
+                        style={{ zIndex: 4 }}
+
+          type="submit">
             Log In
           </button>
         </form>

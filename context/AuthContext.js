@@ -50,7 +50,6 @@ export const AuthProvider = (props) => {
         setUser({ email });
         //Add this just for test
         const token = await getToken();
-        console.log("checkUserLoggedIn token", token);
       }
     } catch (err) {
       console.log(err);
