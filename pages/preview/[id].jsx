@@ -4,7 +4,7 @@ import Link from "next/link";
 import ErrorPage from "../../component/ErrorPage";
 import BuyButton from "../../component/BuyButton";
 
-export default function Photo({ photo, location, name, date, previews }) {
+export default function Photo({ photo, location, name, date, previews, price }) {
   const router = useRouter();
   if (!router.isFallback && !photo) {
     return <ErrorPage statusCode={404} />;

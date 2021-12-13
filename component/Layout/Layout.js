@@ -1,5 +1,4 @@
-import React from // { useEffect, useState }
-"react";
+import React from "react"; // { useEffect, useState }
 // import Toolbar from "../Toolbar/Toolbar";
 // import SideDrawer from "../SideDrawer/SideDrawer";
 // import Backdrop from "../Backdrop/Backdrop";
@@ -15,7 +14,7 @@ function Layout({ children }) {
   //     }
   //   }, []);
 
-  return <content>words{children}</content>;
+  return <content>{children}</content>;
 }
 
 export default Layout;
