@@ -31,17 +31,17 @@ export default function Home({ stuff }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Ella Photography</title>
+        <title>Alisa Prints</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
           id="meta-description"
           name="description"
-          content="Pictures and things for sale by Ella Foster"
+          content="Pictures and things for sale by Alisa"
         />
         <meta
           id="og-title"
           property="og:title"
-          content="Ella Foster the photographer "
+          content="Alisa the painter"
         />
         <meta id="og-image" property="og:image" content="Logo.png" />
       </Head>
@@ -50,12 +50,15 @@ export default function Home({ stuff }) {
           className="h-screen w-screen bg-Purps z-1 fixed opacity-50 top-0"
           onClick={backdropClickHandler}
         />
-      )}{" "}
+      )}
       <Toolbar drawerClickHandler={drawerToggleClickHandler} />
       <SideDrawer show={sideOpen} />
       <main className={styles.main}>
-        <img height="100" width="100" src="Logo.png" /> Ella Foster,
-        photographer
+        {/* <img height="100" width="100" src="Logo.png" />  */}
+        <img height="100" width="100" src="Alisa.svg" /> 
+
+        
+        Alisa Prints
         <input
           onChange={(e) => setSearch(e.target.value)}
           className={styles.searchInput}

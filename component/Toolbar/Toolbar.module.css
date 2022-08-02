@@ -3,8 +3,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: hsl(288, 61%, 55%);
+  background: linear-gradient(0.25turn, hsl(110, 61%, 25%), hsl(210, 61%, 25%));
   height: 56px;
+  transition: 2s;
+}
+.toolbar:hover {
+  filter: hue-rotate(90deg);
 }
 
 .toolbarNavigation {

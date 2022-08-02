@@ -23,7 +23,7 @@ const Toolbar = (props) => {
           className={style.toolbarLogo}
         >
           <Link href="/">
-            Ella Photography
+            Alisa Prints
           </Link>
         </div>
         <div className={style.spacer} />
