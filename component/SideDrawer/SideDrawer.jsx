@@ -6,7 +6,7 @@ import AuthContext from "../../context/AuthContext";
 const SideDrawer = (props) => {
   const { user } = useContext(AuthContext);
 
-  let drawerClasses = "ease-in -translate-x-full duration-150 w-none fixed";
+  let drawerClasses = "hidden";
   if (props.show) {
     drawerClasses =
       "bg-Purps z-1 translate-x-0 ease-out duration-150 opacity-100 h-full text-black z-99 shadowed top-0 fixed left-0 w-1/2 m-w-80";
@@ -27,7 +27,6 @@ const SideDrawer = (props) => {
               </Link>
 
         </li>
-
         <li style={{ zIndex: 2 }} className="text-left mt-8 relative p-3">
           {user ? (
             ""
