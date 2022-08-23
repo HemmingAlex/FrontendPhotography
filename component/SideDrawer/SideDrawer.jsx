@@ -20,6 +20,14 @@ const SideDrawer = (props) => {
             Home
           </a>
         </li>
+        <li className="text-left relative p-3 ">
+
+        <Link href="/Contact">
+                <a>Contacts</a>
+              </Link>
+
+        </li>
+
         <li style={{ zIndex: 2 }} className="text-left mt-8 relative p-3">
           {user ? (
             ""
@@ -29,9 +37,11 @@ const SideDrawer = (props) => {
             </Link>
           )}
           {user && (
-            <Link href="/Account">
-              <a>Account</a>
-            </Link>
+            <>
+              <Link href="/Account">
+                <a>Account</a>
+              </Link>
+            </>
           )}
         </li>
       </ul>
